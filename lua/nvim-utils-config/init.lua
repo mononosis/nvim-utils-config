@@ -7,15 +7,15 @@ local function split(str, delimiter)
   return result
 end
 
+
+
+local M = {}
 -- Function to add directories to the runtimepath
-local function add_paths_to_rtp(paths)
+ function M.add_paths_to_rtp(paths)
   for _, path in ipairs(paths) do
     vim.o.runtimepath = vim.o.runtimepath .. ',' .. path
   end
 end
-
-
-local M = {}
 function M.set_packages_paths(dir)
   if dir then
     package.path = dir ..
