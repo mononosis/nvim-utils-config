@@ -18,7 +18,7 @@ end
 local M = {}
 function M.set_packages_paths(dir)
   if dir then
-    package.path = package.path .. ';' .. dir .. '/?/init.lua' .. ';' .. dir .. '/?.lua' .. ';'
+    package.path = package.path .. ';' .. dir .. '/?/init.lua' .. ';' .. dir .. '/?.lua' .. ';' .. dir .. '/?/?/.lua' .. ';'
   end
 end
 
