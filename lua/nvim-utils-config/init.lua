@@ -1,7 +1,11 @@
-
-
-
 local M = {}
+
+function M.this_file_path()
+  local str = debug.getinfo(2, "S").source:sub(2)
+  print(str)
+  return str:match("(.*/)")
+end
+
 -- Function to split a string by a delimiter
 function M.split(str, delimiter)
   local result = {}
@@ -10,16 +14,18 @@ function M.split(str, delimiter)
   end
   return result
 end
+
 -- Function to add directories to the runtimepath
- function M.add_paths_to_rtp(paths)
+function M.add_paths_to_rtp(paths)
   for _, path in ipairs(paths) do
     vim.o.runtimepath = path .. ',' .. vim.o.runtimepath
   end
 end
+
 function M.set_packages_paths(dir)
   if dir then
     package.path = dir ..
-    '/?/init.lua' .. ';' .. dir .. '/?.lua' .. ';' .. dir .. '/lua/?/init.lua' .. ';' .. package.path .. ';'
+        '/?/init.lua' .. ';' .. dir .. '/?.lua' .. ';' .. dir .. '/lua/?/init.lua' .. ';' .. package.path .. ';'
   end
 end
 
