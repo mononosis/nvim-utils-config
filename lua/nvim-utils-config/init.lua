@@ -1,15 +1,15 @@
+
+
+
+local M = {}
 -- Function to split a string by a delimiter
-local function split(str, delimiter)
+function M.split(str, delimiter)
   local result = {}
   for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
     table.insert(result, match)
   end
   return result
 end
-
-
-
-local M = {}
 -- Function to add directories to the runtimepath
  function M.add_paths_to_rtp(paths)
   for _, path in ipairs(paths) do
