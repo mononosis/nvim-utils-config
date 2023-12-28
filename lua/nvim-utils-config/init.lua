@@ -13,7 +13,7 @@ end
 -- Function to add directories to the runtimepath
  function M.add_paths_to_rtp(paths)
   for _, path in ipairs(paths) do
-    vim.o.runtimepath = vim.o.runtimepath .. ',' .. path
+    vim.o.runtimepath = path .. ',' .. vim.o.runtimepath
   end
 end
 function M.set_packages_paths(dir)
