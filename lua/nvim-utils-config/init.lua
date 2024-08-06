@@ -25,9 +25,10 @@ end
 function M.set_packages_paths(dir)
   if dir then
     package.path = dir .. '/?/init.lua' .. ';' ..
-        dir .. '/?.lua' .. ';' ..
         dir .. '/plugins/?/init.lua' .. ';' ..
+        dir .. '/?.lua' .. ';' ..
         dir .. '/lua/?/init.lua' .. ';' ..
+        dir .. '/lua/?.lua' .. ';' ..
         dir .. '/plugin/?.lua' .. ';' ..
         dir .. '/plugin/init.lua' .. ';' ..
         --'/lua/?/init.lua' .. ';' ..
