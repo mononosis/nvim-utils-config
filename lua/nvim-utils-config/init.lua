@@ -66,4 +66,5 @@ function M.GetLastSubpath(path)
   end
 end
 
-return M
+_G.user_utils_config = M
+
