@@ -66,5 +66,5 @@ function M.GetLastSubpath(path)
   end
 end
 
-vim.g.user_utils_config = M
+_G.user_utils_config = M
 
